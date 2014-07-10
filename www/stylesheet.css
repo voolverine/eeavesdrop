@@ -1,0 +1,51 @@
+/*CSS styles*/
+
+*{
+	border: 1px dashed blue;
+}
+/*
+#header {
+	position: absolute;
+	display: block;
+	height: 10%;
+	width: 47%;
+	margin: 0 26% 0 26%;
+	background-color: red:
+}
+*/
+
+#main {
+	position: relative;
+	display: block;
+	margin: 20% auto;
+}  
+
+.b-popup{
+    background-color: rgba(0,0,0,0.5);
+    overflow:hidden;
+    position:fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.b-popup .b-popup-content{
+    margin:9% auto 0px auto;
+    position: relative;
+	width:20%;
+    height: 20%;
+    padding:10px;
+    background-color: #c5c5c5;
+    border-radius:5px;
+    box-shadow: 0px 0px 10px #000;
+}
+
+#EnRe {
+	width: 57px;
+	display: block-inline;
+}
+
+a:hover {
+	color: red;
+}
