@@ -18,5 +18,21 @@
 		echo "lalka";
 		exit;
 	}
+	
+	$name = stripcslashes($name);
+	$name = htmlspecialchars($name);
+	$name = trim($name);
+	$surname = stripcslashes($surname);
+	$surname = htmlspecialchars($surname);
+	$surname = trim($surname);
+	$mail = stripcslashes($mail);
+	$mail = htmlspecialchars($mail);
+	$mail = trim($mail);
+	$pw = stripcslashes($pw);
+	$pw = htmlspecialchars($pw);
+	$pw = trim($pw);
+	
+	echo "lalka";
+	exit;
 ?>
 
