@@ -20,13 +20,13 @@
 				var name = document.getElementByld('name_input').value;
 				var surname = document.getElementByld('surname_input').value;
 				var mail = document.getElementByld('mail_input').value;
-				var password = document.getElementByld('password_input');
+				var password = document.getElementByld('password_input').value;
 				var params = 'name=' + name + '&surname=' + surname + '&mail=' + mail + '&password=' + password;
-				xmlhttp.open("POST", "check.php", true);
+				xmlhttp.open("POST", url, true);
 				xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 				xmlhttp.onreadystatechange = function() {
 					if (xmlhttp.readyState == 4) {
-						var ans = responseText;
+						var ans = xmlhttp.responseText;
 						confirm(ans);
 					}
 				}
