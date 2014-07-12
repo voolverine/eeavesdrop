@@ -15,6 +15,23 @@
 			function PopUpHide(){
 				$("#popup1").hide();
 			}
+			function call(url) {
+				var xmlhttp = getXmlHttp();
+				var name = document.getElementByld('name_input').value;
+				var surname = document.getElementByld('surname_input').value;
+				var mail = document.getElementByld('mail_input').value;
+				var password = document.getElementByld('password_input');
+				var params = 'name=' + name + '&surname=' + surname + '&mail=' + mail + '&password=' + password;
+				xmlhttp.open("POST", "check.php", true);
+				xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				xmlhttp.onreadystatechange = function() {
+					if (xmlhttp.readyState == 4) {
+						var ans = responseText;
+						confirm(ans);
+					}
+				}
+				xmlhttp.send(params);
+			}
 		</script>		
 		<title>
 		
@@ -39,13 +56,11 @@
 				</form>
 				<div class="b-popup" id = "popup1">
 					<div class="b-popup-content" align = "center">
-						<form action = "save_user.php" method = "post" align = "center">
-							<input name = "name" type = "text" size = "16" maxlength = "16" placeholder = "Your name" /> </br>
-							<input name = "surname" type = "text" size = "16" maxlength = "16" placeholder = "Your surname" /> </br>
-							<input name = "mail" type = "text" size = "16" maxlength = "16" placeholder = "Your mail" /> </br>
-							<input name = "pw" type = "text" size = "16" maxlength = "16" placeholder = "Your password" /> </br>
-							<input name = "submit" type = "submit" value = "Register" />
-						</form>
+						<input name = "name" type = "text" size = "16" maxlength = "16" placeholder = "Your name" /> </br>
+						<input name = "surname" type = "text" size = "16" maxlength = "16" placeholder = "Your surname" /> </br>
+						<input name = "mail" type = "text" size = "16" maxlength = "16" placeholder = "Your mail" /> </br>
+						<input name = "password" type = "text" size = "16" maxlength = "16" placeholder = "Your password" /> </br>
+						<input name = "submit" type = "button" value = "Register" onclick = "javascript: call(save_user.php)"/>
 						<a href="javascript: PopUpHide()">Close</a>
 					</div>
 				</div>
